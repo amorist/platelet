@@ -1,11 +1,11 @@
 const { app, BrowserWindow, TouchBar } = require('electron')
 const { TouchBarButton } = TouchBar
 
-require('update-electron-app')({
-  repo: 'amorist/platelet',
-  updateInterval: '1 hour',
-  logger: require('electron-log')
-})
+// require('update-electron-app')({
+//   repo: 'amorist/platelet',
+//   updateInterval: '1 hour',
+//   logger: require('electron-log')
+// })
 
 const spin = new TouchBarButton({
   label: '👻 血小板 けっしょうばん',
