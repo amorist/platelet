@@ -49,7 +49,7 @@
       "icon": "build/icons"
     }
   },
-  "repository": "",
+  "repository": "https://github.com/amorist/platelet",
   "keywords": [
     "platelet"
   ],
