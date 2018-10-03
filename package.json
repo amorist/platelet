@@ -1,6 +1,6 @@
 {
   "name": "platelet",
-  "version": "0.0.15",
+  "version": "0.0.1",
   "description": "platelet",
   "main": "main.js",
   "scripts": {
