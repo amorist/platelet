@@ -18,13 +18,13 @@ cache:
 script:
 - npm run pack
 - npm run dist
-- cd build && ls
 deploy:
   provider: releases
   skip_cleanup: true
   api_key:
     secure: e4fkqgMTNAdhZRjfkmq75aujmaTrVo+KQ2hA9x0NpR7y3AAtHUR3JQ/QZP5WNbEJMnZK/dl4qc4zaZ6QVio8gx0uPg0kBByAHuXS6Gn61iCSx5KJC01hywDoyECXdpuKqlDHBfUHvFyplONPf7xp0ef2Xhw9io8Idq10pSSqInrEy+TtGqAY+Yi4pfW44iltoFIjnBNyNiHG+gy2mof47WdlVHeJOw0v0mo/7X9twlmOKX8nKevDuriqgHD4nAcJBZRENjzJqhtKCk+65TkBWWKWrk7zCBOVxY8LINk8G6xwOsDi8Ns5koUvX5IZJ+2D5V5FEM4KYxks/e9xZO3mmWgOf9C661U1hajGVjLm93uKGJxaEFp1FPWAbe8tpsXEQtAYXKDzgHRtTFiqiWYFqaONp9gztbSVp1UAIhfJwEV375SUHbgT46cxGc9IEVeJY8u19tJEkhq24+1qKI0O8cm4jY981V9R804tFaQFmfJXrWUMMEEN4qXUVfRKNr7odYbzRLGYgEp8WryRiPLmc2nTzbeJb/PIn5iYx4MiAUUZS67V8856VOoKczWj3z+VtXInV78VBVPpTcXlwOYebZJ3mBC0cbbW67LZIv+a7ITka7KPqA23BwGMubNtFzCyBeQ99gznjZBmnnju25XUgJav3mqPac6C2LzpbFByh+w=
   file_glob: true
-  file: build/mac/platelet.app
+  overwrite: true
+  file: build/*
   on:
     tags: true
