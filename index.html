@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous">
+  <link href="./assets/css/platelet.css" rel="stylesheet" type="text/css" />
+  <script>
+    delete module.exports
+  </script>
+</head>
+
+<body>
+  <div class="platelet" style="display: block;">
+    <div class="platelet-tips"></div>
+    <div style="width: 250px;overflow: hidden;">
+      <canvas id="live2d" width="650" height="600" class="live2d" style="width: 325px;height: 300px;"></canvas>
+    </div>
+    <div class="platelet-tool">
+      <i class="fa fa-eye eye"></i>
+      <i class="fa fa-comment comment"></i>
+      <i class="fa fa-camera camera"></i>
+    </div>
+  </div>
+  <div id="main" class="container"></div>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script src="./assets/js/live2d.js"></script>
+<script src="./assets/js/platelet.js"></script>
+<script src="./assets/js/renderer.js"></script>
+<script type="text/javascript">
+  loadlive2d("live2d", "./assets/kesshouban_v2/model.json");
+</script>
+
+</html>

@@ -1,0 +1,65 @@
+{
+  "name": "platelet",
+  "version": "0.0.15",
+  "description": "platelet",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "patch": "npm version patch && git push origin master && git push origin --tags",
+    "minor": "npm version patch && git push origin master && git push origin --tags",
+    "major": "npm version patch && git push origin master && git push origin --tags"
+  },
+  "build": {
+    "productName": "platelet",
+    "appId": "org.amor.platelet",
+    "dmg": {
+      "contents": [
+        {
+          "x": 410,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        },
+        {
+          "x": 130,
+          "y": 150,
+          "type": "file"
+        }
+      ]
+    },
+    "directories": {
+      "output": "build"
+    },
+    "files": [
+      "assets/",
+      "index.html",
+      "main.js",
+      "node_modules/",
+      "package.json"
+    ],
+    "mac": {
+      "icon": "build/icons/platelet.icns"
+    },
+    "win": {
+      "icon": "build/icons/platelet.ico"
+    },
+    "linux": {
+      "icon": "build/icons"
+    }
+  },
+  "repository": "",
+  "keywords": [
+    "platelet"
+  ],
+  "author": "amorist",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^3.0.2",
+    "electron-builder": "^20.28.4"
+  },
+  "dependencies": {
+    "dark-mode": "^3.0.0"
+  }
+}

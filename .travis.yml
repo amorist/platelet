@@ -1,0 +1,32 @@
+osx_image: xcode8.3
+dist: trusty
+sudo: required
+language: node_js
+node_js: 10.11.0
+env:
+  global:
+  - ELECTRON_CACHE=$HOME/.cache/electron
+  - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
+os:
+- osx
+cache:
+  directories:
+  - node_modules
+  - "$HOME/.cache/electron"
+  - "$HOME/.cache/electron-builder"
+  - "$HOME/.npm/_prebuilds"
+script:
+- npm run pack
+- npm run dist
+- cd build && ls
+deploy:
+  provider: releases
+  skip_cleanup: true
+  api_key:
+    secure: CCOrYMJQIK6G33E8U+QgMlIfU1PbVZNn7QmQ7wlLZ9NYS3b8cJOUUgl8qY0639UwpEZSMEv3gEMlhPgHvfgc2VxkCTPawG+aC7+elQyH/RUItZOXUqm8Z6bL8jXb/oWF7e2JC87AsiLvKo9kdY36CjDbV/oVb9t2tU0fp0PhWH8GpYvmerE3pQyMj5keUjiuA40Yu3RqYcl5ugvvP5m2IAcbNQuJu7ehIB6fYcgTT3vPJnLaftyhf5BCmZeDHqRKHTdtaNQRDX/fA/b5UhqSllDjfd/UbYT10c01rrwxXKM7a/zKFMe5YCbQJZJoqKyZoEeBfNUbfSczypTv+YJ2qRB6X6ArmQ0rnWGL588EHPMMr7zYEeTmFpVZ2E5VXLow7yg7tXvnyQgcFmiTnL9uT5HN2ek/p29dJyzRtfuxOafblJlzF9HDUtFBMyF7YFJdce0qQ03vd+o11iJTF3am2XcVUG3WjgpjHDrfNFkt3Namj5l7RjLPpZUtMGo5mrMcovWyucymcBIlvjMQhM7jkToesiq7RX926RC6cbzHfFpi3KRW/bYOk0Ms0i2areQElH27CK4a7iCgdPyMKrjxwG4bPlrkKT8otqSX86mDMA4plbT3Zr32VeFhnHhLs9L9RfMr8hAG/5blQxZfFzZkvQwTaykFnkaO2EgvGfrqJIU=
+  file_glob: true
+  file: 
+  - "package.json"
+  - "README.md"
+  on:
+    tags: true
