@@ -4,6 +4,7 @@ Your Desktop Platelet
 ## Features
 * toggle dark mode
 * take photo
+* play music
 
 ## Download
 * mac https://github.com/amorist/platelet/releases

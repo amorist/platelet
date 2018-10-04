@@ -25,17 +25,24 @@ re.toString = function () {
     return '';
 };
 
-$(document).on('copy', function () {
-    showMessage('你都复制了些什么呀，转载要记得加上出处哦', 5000, true);
-});
-
-$('.platelet-tool .fui-home').click(function () {
-    // window.location = '';
-});
-
 $('.platelet-tool .eye').click(function () {
     switchNightMode();
     showMessage('你会做眼保健操吗？', 3000, true);
+});
+
+let is_play = false
+
+$('.platelet-tool .music').click(function () {
+    let text = '播放血小板之歌了哦';
+    if (is_play) {
+        is_play = false;
+        text = '停止播放血小板之歌了哦';
+    } else {
+        is_play = true;
+        text = '播放血小板之歌了哦';
+    }
+    showMessage(text, 3000, true);
+    playVoice('./assets/music/platelet.mp3', is_play)
 });
 
 $('.platelet-tool .comment').click(function () {
@@ -167,4 +174,12 @@ function formatSeconds(value) {
     if (days > 0)
         result = "" + parseInt(days) + "天" + result;
     return result;
+}
+
+function playVoice(file, is_play) {
+    if (is_play) {
+        $('.music').html('<audio controls="controls" id="audio_player" style="display:none;"> <source src="' + file + '" > </audio><embed id="MPlayer_Alert" src="' + file + '" loop="false" width="0px" height="0px" /></embed>');
+    } else {
+        $('.music').html('');
+    }
 }

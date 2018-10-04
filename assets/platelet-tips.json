@@ -7,6 +7,12 @@
             ]
         },
         {
+            "selector": ".platelet-tool .music",
+            "text": [
+                "洛天依，血小板之歌哦"
+            ]
+        },
+        {
             "selector": ".platelet-tool .comment",
             "text": [
                 "猜猜我要说些什么"
