@@ -1,9 +1,10 @@
 # platelet
-your desktop platelet
+Your Desktop Platelet
 
+Download https://github.com/amorist/platelet/releases
 
-video https://youtu.be/8m122AfE5U8
+Special Thanks: [猫与向日葵 ](https://imjad.cn/archives/lab/add-dynamic-poster-girl-with-live2d-to-your-blog-03 "猫与向日葵"),[Denchi ](https://twitter.com/DenchiSoft/status/1036017773011525632 "Denchi")
 
-download https://github.com/amorist/platelet/releases
+Video https://youtu.be/8m122AfE5U8
 
 ![platelet1](assets/screenshot/screenshot1.png)
