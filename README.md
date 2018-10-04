@@ -1,5 +1,6 @@
 # platelet
 Your Desktop Platelet
+![platelet](assets/screenshot/screenshot2.png)
 
 ## Features
 * toggle dark mode
