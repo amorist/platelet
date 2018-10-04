@@ -16,3 +16,4 @@ Your Desktop Platelet
 * https://youtu.be/8m122AfE5U8
 
 ## Screenshot
+![platelet](assets/screenshot/screenshot1.png)
