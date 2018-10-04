@@ -7,6 +7,9 @@ Your Desktop Platelet
 * take photo
 * play music
 
+## Todo Features
+* image hosting
+
 ## Download
 * mac https://github.com/amorist/platelet/releases
 
