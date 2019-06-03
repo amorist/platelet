@@ -19,6 +19,9 @@ script:
 - npm run pack
 - npm run dist
 deploy:
+  branches:
+    only:
+    - master
   provider: releases
   skip_cleanup: true
   api_key:
