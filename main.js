@@ -1,5 +1,7 @@
+const path = require('path')
 const { app, BrowserWindow, TouchBar } = require('electron')
 const { TouchBarButton } = TouchBar
+
 
 const spin = new TouchBarButton({
   label: '👻 血小板 けっしょうばん',
@@ -25,7 +27,12 @@ function createWindow() {
     frame: false,
     focusable: true,
     alwaysOnTop: true,
-    show: false
+    show: false,
+    webPreferences: {
+      // preload: path.join(app.getAppPath(), 'assets/js/renderer.js')
+      nodeIntegration: true,
+      nodeIntegrationInWorker: true
+    }
   })
 
   mainWindow.loadFile('index.html')
