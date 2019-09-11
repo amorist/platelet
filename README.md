@@ -1,4 +1,4 @@
-# platelet (けっしょうばん)
+# けっしょうばん
 
 <img src="assets/screenshot/screenshot3.png" height="280px" />
 
