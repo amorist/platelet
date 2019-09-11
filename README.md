@@ -1,6 +1,6 @@
 # platelet (けっしょうばん)
 
-![platelet](assets/screenshot/screenshot2.png)
+<img src="assets/screenshot/screenshot3.png" height="280px" />
 
 ## Features
 
