@@ -1,4 +1,4 @@
-# platelet
+# platelet (けっしょうばん)
 
 ![platelet](assets/screenshot/screenshot2.png)
 
