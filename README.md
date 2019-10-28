@@ -14,7 +14,8 @@
 
 ## Download
 
-* mac https://github.com/amorist/platelet/releases
+* `brew cask install platelet`
+* https://github.com/amorist/platelet/releases
 
 ## Special Thanks
 
