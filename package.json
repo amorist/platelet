@@ -57,7 +57,7 @@
   "license": "MIT",
   "devDependencies": {
     "electron": "^7.0.0",
-    "electron-builder": "^21.2.0"
+    "electron-builder": "^22.3.2"
   },
   "dependencies": {
     "dark-mode": "^3.0.0"
