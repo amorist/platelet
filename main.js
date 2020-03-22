@@ -38,12 +38,13 @@ function createWindow() {
     x: width - MAIN_WIDTH,
     y: height - MAIN_HEIGHT,
     webPreferences: {
+      devTools: app.isPackaged ? false : true,
       nodeIntegration: true,
       nodeIntegrationInWorker: true
     }
   });
   mainWindow.on("closed", () => (mainWindow = null));
-  mainWindow.loadFile("index.html");
+  mainWindow.loadFile(path.join(__dirname, 'index.html'));
   mainWindow.once("ready-to-show", () => {
     mainWindow.show();
     mainWindow.setTouchBar(touchBar);
@@ -98,7 +99,7 @@ ipcMain.on("show-setting-window", () => {
     },
     show: false
   });
-  settingWindow.loadFile("setting.html");
+  settingWindow.loadFile(path.join(__dirname, 'setting.html'));
   settingWindow.show();
 });
 
