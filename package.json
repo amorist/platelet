@@ -1,7 +1,7 @@
 {
   "name": "platelet",
   "version": "0.0.16",
-  "description": "platelet",
+  "description": "platelet live2D",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
@@ -12,7 +12,7 @@
     "major": "npm version major && git push origin master && git push origin --tags"
   },
   "build": {
-    "productName": "platelet",
+    "productName": "Platelet",
     "appId": "org.amor.platelet",
     "dmg": {
       "contents": [
