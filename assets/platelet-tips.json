@@ -25,6 +25,12 @@
             ]
         },
         {
+            "selector": ".platelet-tool .cog",
+            "text": [
+                "主人，您可以定制我哦 😊"
+            ]
+        },
+        {
             "selector": ".platelet #live2d",
             "text": [
                 "干嘛呢你，快把手拿开",

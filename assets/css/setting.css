@@ -1,0 +1,16 @@
+body {
+    background: transparent;
+}
+.setting {
+  -webkit-app-region: drag;
+  transition: all 0.3s ease-in-out;
+  -webkit-transform: translateY(3px);
+  transform: translateY(3px);
+  background-color: #fff;
+  height: 100%;
+}
+
+.setting:hover {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}

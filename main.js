@@ -1,72 +1,77 @@
-const path = require('path')
-const { app, BrowserWindow, TouchBar } = require('electron')
-const { TouchBarButton } = TouchBar
+const path = require("path");
+const { app, BrowserWindow, TouchBar, ipcMain, screen } = require("electron");
+const { TouchBarButton } = TouchBar;
 
+const MAIN_WIDTH = 320;
+const MAIN_HEIGHT = 350;
 
 const spin = new TouchBarButton({
-  label: '👻 血小板 けっしょうばん',
-  backgroundColor: '#7851A9',
+  label: "👻 血小板 けっしょうばん",
+  backgroundColor: "#7851A9",
   click: () => {
-    console.log('血小板')
+    console.log("血小板");
   }
-})
+});
 
-const touchBar = new TouchBar([spin])
+let spins = [spin];
 
-let mainWindow
+const touchBar = new TouchBar({
+  items: spins
+});
+
+let mainWindow, settingWindow;
 
 function createWindow() {
+  const display = screen.getPrimaryDisplay();
+  const { width, height } = display.bounds;
   mainWindow = new BrowserWindow({
-    width: 320,
-    height: 350,
-    title: 'platelet',
+    width: MAIN_WIDTH,
+    height: MAIN_HEIGHT,
+    title: "platelet",
     hasShadow: false,
     transparent: true,
-    titleBarStyle: 'customButtonsOnHover',
     resizable: app.isPackaged ? false : true,
     frame: false,
     focusable: true,
     alwaysOnTop: true,
     show: false,
+    x: width - MAIN_WIDTH,
+    y: height - MAIN_HEIGHT,
     webPreferences: {
-      // preload: path.join(app.getAppPath(), 'assets/js/renderer.js')
       nodeIntegration: true,
       nodeIntegrationInWorker: true
     }
-  })
-
-  mainWindow.loadFile('index.html')
-
-  mainWindow.on('closed', () => mainWindow = null)
-
-  mainWindow.once('ready-to-show', () => {
-    mainWindow.show()
-    mainWindow.setTouchBar(touchBar)
-  })
+  });
+  mainWindow.on("closed", () => (mainWindow = null));
+  mainWindow.loadFile("index.html");
+  mainWindow.once("ready-to-show", () => {
+    mainWindow.show();
+    mainWindow.setTouchBar(touchBar);
+  });
 }
 
-app.on('ready', () => createWindow())
+app.on("ready", () => createWindow());
 
-app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
-    app.quit()
+app.on("window-all-closed", () => {
+  if (process.platform !== "darwin") {
+    app.quit();
   }
-})
+});
 
-app.on('activate', () => {
+app.on("activate", () => {
   if (mainWindow === null) {
-    createWindow()
+    createWindow();
   }
-})
+});
 
-app.requestSingleInstanceLock()
+app.requestSingleInstanceLock();
 
-app.on('second-instance', () => {
+app.on("second-instance", () => {
   if (mainWindow) {
-    if (mainWindow.isMinimized()) mainWindow.restore()
-    mainWindow.focus()
+    if (mainWindow.isMinimized()) mainWindow.restore();
+    mainWindow.focus();
   }
-})
+});
 
 if (process.platform === "darwin") {
   app.setAboutPanelOptions({
@@ -76,3 +81,33 @@ if (process.platform === "darwin") {
     credits: "Amor"
   });
 }
+
+ipcMain.on("show-setting-window", () => {
+  settingWindow = new BrowserWindow({
+    height: 300,
+    width: 400,
+    parent: mainWindow,
+    frame: false,
+    focusable: true,
+    resizable: true,
+    hasShadow: false,
+    transparent: true,
+    webPreferences: {
+      nodeIntegration: true,
+      nodeIntegrationInWorker: true
+    },
+    show: false
+  });
+  settingWindow.loadFile("setting.html");
+  settingWindow.show();
+});
+
+ipcMain.on("hide-setting-window", (event) => {
+  if (settingWindow !== null) {
+    settingWindow.destroy()
+  }
+});
+
+ipcMain.on('setting-hitokoto', (event, data) => {
+  mainWindow.webContents.send('setting-hitokoto', data);
+})
