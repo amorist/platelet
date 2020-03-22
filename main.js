@@ -44,11 +44,35 @@ function createWindow() {
     }
   });
   mainWindow.on("closed", () => (mainWindow = null));
-  mainWindow.loadFile(path.join(__dirname, 'index.html'));
+  mainWindow.loadFile(path.join(__dirname, "index.html"));
   mainWindow.once("ready-to-show", () => {
     mainWindow.show();
     mainWindow.setTouchBar(touchBar);
   });
+}
+
+function createSettingWindow() {
+  if (settingWindow) {
+    settingWindow.show();
+    return
+  }
+  settingWindow = new BrowserWindow({
+    height: 300,
+    width: 400,
+    parent: mainWindow,
+    frame: false,
+    focusable: true,
+    resizable: app.isPackaged ? false : true,
+    hasShadow: false,
+    transparent: true,
+    webPreferences: {
+      nodeIntegration: true,
+      nodeIntegrationInWorker: true
+    },
+    show: false
+  });
+  settingWindow.loadFile(path.join(__dirname, "setting.html"));
+  settingWindow.show();
 }
 
 app.on("ready", () => createWindow());
@@ -84,31 +108,13 @@ if (process.platform === "darwin") {
 }
 
 ipcMain.on("show-setting-window", () => {
-  settingWindow = new BrowserWindow({
-    height: 300,
-    width: 400,
-    parent: mainWindow,
-    frame: false,
-    focusable: true,
-    resizable: app.isPackaged ? false : true,
-    hasShadow: false,
-    transparent: true,
-    webPreferences: {
-      nodeIntegration: true,
-      nodeIntegrationInWorker: true
-    },
-    show: false
-  });
-  settingWindow.loadFile(path.join(__dirname, 'setting.html'));
-  settingWindow.show();
+  createSettingWindow();
 });
 
-ipcMain.on("hide-setting-window", (event) => {
-  if (settingWindow !== null) {
-    settingWindow.destroy()
-  }
+ipcMain.on("hide-setting-window", event => {
+  settingWindow.hide()
 });
 
-ipcMain.on('setting-hitokoto', (event, data) => {
-  mainWindow.webContents.send('setting-hitokoto', data);
-})
+ipcMain.on("setting-hitokoto", (event, data) => {
+  mainWindow.webContents.send("setting-hitokoto", data);
+});
