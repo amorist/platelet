@@ -90,7 +90,7 @@ ipcMain.on("show-setting-window", () => {
     parent: mainWindow,
     frame: false,
     focusable: true,
-    resizable: true,
+    resizable: app.isPackaged ? false : true,
     hasShadow: false,
     transparent: true,
     webPreferences: {
