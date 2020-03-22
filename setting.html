@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>设置</title>
+    <link href="./assets/css/setting.css" rel="stylesheet" type="text/css" />
+    <link href="./assets/css/paper.min.css" rel="stylesheet" type="text/css" />
+    <script>
+      delete module.exports;
+    </script>
+  </head>
+  <body>
+    <div class="border border-primary shadow setting">
+      <div class="row">
+        <div class="col sm-12">
+          <div class="form-group">
+            <label for="paperInputs2">Hitokoto</label>
+            <input id="hitokoto-value" min="3000" class="input-block" type="number" id="paperInputs2" />
+          </div>
+        </div>
+      </div>
+     <div class="row flex-right">
+        <button class="btn-small save">Save</button>
+        <button class="btn-small close">Close</button>
+      </div>
+    </div>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+  <script src="./assets/js/store.js"></script>
+  <script src="./assets/js/setting.js"></script>
+</html>
