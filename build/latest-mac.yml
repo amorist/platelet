@@ -1,0 +1,12 @@
+version: 0.0.18
+files:
+  - url: Platelet-0.0.18-mac.zip
+    sha512: QWXrDKTY+p/lUpmP2muL62y/UiaAEHZaMG9zCFfr7MF/vSJzHfonYfUWoS26MM2mVQ4FwjVD2bE5sWxajcWE6A==
+    size: 71246522
+    blockMapSize: 75086
+  - url: Platelet-0.0.18.dmg
+    sha512: zXAOVxD2Nw7TmFkYlkcHAkCkN3jfKeaiCfmFky6OxXUVrglCZXkJQe37hCHbNJL4qsgTEcZXVx/W9+xsCd5ocg==
+    size: 75188553
+path: Platelet-0.0.18-mac.zip
+sha512: QWXrDKTY+p/lUpmP2muL62y/UiaAEHZaMG9zCFfr7MF/vSJzHfonYfUWoS26MM2mVQ4FwjVD2bE5sWxajcWE6A==
+releaseDate: '2020-03-22T13:09:38.579Z'
