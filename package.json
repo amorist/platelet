@@ -1,6 +1,6 @@
 {
   "name": "platelet",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "platelet live2D",
   "main": "main.js",
   "scripts": {
