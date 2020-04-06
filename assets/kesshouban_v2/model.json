@@ -18,16 +18,16 @@
 	},
 	"motions":{
 		"idle":[
-			{"file":"motions/Idle.mtn?"}
+			{"file":"motions/Idle.mtn"}
 		],
         "sleepy":[
-            {"file":"motions/Nemui.mtn?"}
+            {"file":"motions/Nemui.mtn"}
         ],
 		"flick_head":[
-			{"file":"motions/Anone_Synced.mtn?"}
+			{"file":"motions/Anone_Synced.mtn"}
 		],
 		"tap_body":[
-			{"file":"motions/Dance.mtn?"}
+			{"file":"motions/Dance.mtn"}
 		]
 	}
 }
