@@ -62,6 +62,6 @@
   },
   "dependencies": {
     "dark-mode": "^3.0.0",
-    "electron-store": "^5.1.1"
+    "electron-store": "^7.0.3"
   }
 }
