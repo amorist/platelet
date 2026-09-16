@@ -57,7 +57,7 @@
   "author": "amorist",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^23.2.1",
+    "electron": "^39.8.10",
     "electron-builder": "^22.4.1"
   },
   "dependencies": {
