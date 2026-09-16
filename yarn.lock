@@ -481,10 +481,10 @@ crypto-random-string@^4.0.0:
   dependencies:
     type-fest "^1.0.1"
 
-dark-mode@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/dark-mode/-/dark-mode-4.0.0.tgz#759d9477cf77607eab693c361290e73dbf06113e"
-  integrity sha512-83sElxTXqnQJmIWQB3Z3B4zQEDNgWkSAOHdDuZulLWiePO8Ne09irYqFdNA2IIrorcUr0jE32sF54eiNb/NQqw==
+dark-mode@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/dark-mode/-/dark-mode-5.0.0.tgz#280e56948d5f31321d2c26f0feed4c98c45e61d4"
+  integrity sha512-hAItH6InmP7eiAIlsObQbK1aupan6B+laczb3bflGLMN5a1JAhdGuU7B7FYFuu1ijCSDuy2viqEzmbmR5UeiUg==
   dependencies:
     run-jxa "^3.0.0"
 
